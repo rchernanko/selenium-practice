@@ -1,4 +1,4 @@
-package com.richard.selenium;
+package com.richard.selenium.section_4_create_a_project;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,6 +20,17 @@ public class MyFirstSeleniumTest {
         WebDriver driver = new HtmlUnitDriver();
         driver.get("http://www.spurs.co.uk/");
 
+        //WebDriver is an interface. I could have easily have done:
+        //HtmlUnitDriver driver = new HtmlUnitDriver();
+
+        //Why use the interface then?
+        //Well we may want to inject, in our tests, the driver, and have the driver itself instantiated somewhere else because
+        //we may want our test to run across numerous different browsers (firefox, chrome etc).
+        //Need to ask the others about this...I don't quite understand...
+        //some more info - https://code.google.com/p/selenium/wiki/NextSteps
+        //https://code.google.com/p/selenium/wiki/GettingStarted
+        //reference - 46 - My first test explored
+
         Assert.assertTrue(driver.getTitle().startsWith("Welcome to tottenhamhotspur.com"));
 
         //So in the above, we are telling the driver to navigate to a specific website
@@ -28,6 +39,10 @@ public class MyFirstSeleniumTest {
 
         //Tests run quickly with HtmlUnitDriver because there is no web browser
         //But, of course, you don't have the visibility of the test running
+
+        //HtmlUnitDriver is great for checking the basics of pages - e.g. checking the title. Is very fast
+        //Basically you should use a different driver depending on the type of test you are executing...
+        //He will explain in more detail later on in the course.
     }
 
 

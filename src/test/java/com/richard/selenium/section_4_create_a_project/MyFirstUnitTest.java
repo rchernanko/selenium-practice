@@ -1,4 +1,4 @@
-package com.richard.selenium;
+package com.richard.selenium.section_4_create_a_project;
 
 import org.junit.Assert;
 import org.junit.Test;
