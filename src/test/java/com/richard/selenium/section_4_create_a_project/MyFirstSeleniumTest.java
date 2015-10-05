@@ -31,7 +31,7 @@ public class MyFirstSeleniumTest {
         //https://code.google.com/p/selenium/wiki/GettingStarted
         //reference - 46 - My first test explored
 
-        Assert.assertTrue(driver.getTitle().startsWith("Welcome to tottenhamhotspur.com"));
+        Assert.assertTrue("The page title is incorrect", driver.getTitle().startsWith("Welcome to tottenhamhotspur.com"));
 
         //So in the above, we are telling the driver to navigate to a specific website
         //And then we are checking whether the header tab states 'welcome to spurs'.

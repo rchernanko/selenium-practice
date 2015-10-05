@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class GetPageGetTitleTest {
 
@@ -15,7 +14,7 @@ public class GetPageGetTitleTest {
         WebDriver driver = new FirefoxDriver();
         driver.get("http://www.bbc.co.uk/football/");
         String pageTitle = driver.getTitle();
-        Assert.assertTrue(pageTitle.startsWith("BBC Sport - Football"));
+        Assert.assertTrue("The page title is incorrect", pageTitle.startsWith("BBC Sport - Football"));
     }
 
     @Test
@@ -23,7 +22,7 @@ public class GetPageGetTitleTest {
 
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.arsenal.com/");
-        Assert.assertFalse(driver.getTitle().startsWith("The worst club in the land"));
+        Assert.assertFalse("The page title is incorrect", driver.getTitle().startsWith("The worst club in the land"));
     }
 
     //Using FirefoxDriver, ChromeDriver etc take longer to execute compared to the headless browser driver HtmlUnitDriver
@@ -42,7 +41,7 @@ public class GetPageGetTitleTest {
 
         WebDriver driver = new FirefoxDriver();
         driver.get("http://www.channel4.com/");
-        Assert.assertTrue(driver.getTitle().startsWith("On Demand"));
+        Assert.assertTrue("The page title is incorrect", driver.getTitle().startsWith("On Demand"));
         driver.quit();
     }
 
@@ -51,7 +50,7 @@ public class GetPageGetTitleTest {
 
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.hotmail.com/");
-        Assert.assertTrue(driver.getTitle().startsWith("Sign in"));
+        Assert.assertTrue("The page title is incorrect", driver.getTitle().startsWith("Sign in"));
         driver.close();
     }
 
