@@ -17,11 +17,16 @@ static too.
 
 package com.richard.selenium.section_7_junit;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
-public class BeforeAndAfterAnnotations {
+public class BeforeAndAfterAnnotationsTest {
+
+    //The below will run once per class. Must be static
+    //If I want to reference a variable in the class below (a static class), the variable must be static
+    @BeforeClass
+    public static void beforeClassMethod() {
+        System.out.println("this i the before class method");
+    }
 
     @Before
     public void beforeTestMethod() {
@@ -48,8 +53,14 @@ public class BeforeAndAfterAnnotations {
         System.out.println("this is the after test method");
     }
 
-    //What is very interesting to know is that when I run this class (BeforeAndAfterAnnotations), the @Tests are not
+    //What is very interesting to know is that when I run this class (BeforeAndAfterAnnotationsTest), the @Tests are not
     //run in any particular order - it can be random. Won't always be 1,2,3. Can sometimes be 3,1,2.
 
-    //Up to 3 mins 45 seconds gone
+    //The below will run once per class. Must be static
+    @AfterClass
+    public static void afterClassMethod() {
+        System.out.println("this is the after class method");
+    }
+
+
 }
