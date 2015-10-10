@@ -1,5 +1,7 @@
 /*
 
+Read this class second.
+
 Exercise is as follows:
 
 - create a test with - assertTrue, assertFalse, assertEquals - DONE
@@ -7,7 +9,7 @@ Exercise is as follows:
 - Use @BeforeClass to assign a value to a field and use it in a test - DONE
 - Explore the documentation at junit.org - DONE, need to learn more over time though
 - Explore the source for junit in your IDE - DONE
-- How do you use assertThat? - STARTED LOOKING AT - JUST WATCH NEXT VIDEO FOR FURTHER INFORMATION
+- How do you use assertThat? - DONE
 
  */
 
@@ -15,6 +17,7 @@ Exercise is as follows:
 package com.richard.selenium.section_7_junit;
 
 import org.junit.*;
+import static org.hamcrest.CoreMatchers.is;
 
 public class MyJunitExampleTest {
 
@@ -68,4 +71,11 @@ public class MyJunitExampleTest {
         setPersonTwoName("richard");
         Assert.assertEquals("Person one and Person two's names are not equal", getPersonOneName(), getPersonTwoName());
     }
+
+    @Test
+    public void exampleAssertThat() {
+        setPersonTwoName("richard");
+        Assert.assertThat("The two names do not match", getPersonOneName(), is("richard"));
+    }
+
 }

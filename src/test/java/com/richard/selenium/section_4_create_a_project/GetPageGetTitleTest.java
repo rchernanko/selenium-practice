@@ -15,14 +15,15 @@ public class GetPageGetTitleTest {
         driver.get("http://www.bbc.co.uk/football/");
         String pageTitle = driver.getTitle();
         Assert.assertTrue("The page title is incorrect", pageTitle.startsWith("BBC Sport - Football"));
+        driver.close();
     }
 
     @Test
     public void isArsenalWebsiteTitleCorrect() {
-
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.arsenal.com/");
         Assert.assertFalse("The page title is incorrect", driver.getTitle().startsWith("The worst club in the land"));
+        driver.close();
     }
 
     //Using FirefoxDriver, ChromeDriver etc take longer to execute compared to the headless browser driver HtmlUnitDriver
@@ -42,7 +43,7 @@ public class GetPageGetTitleTest {
         WebDriver driver = new FirefoxDriver();
         driver.get("http://www.channel4.com/");
         Assert.assertTrue("The page title is incorrect", driver.getTitle().startsWith("On Demand"));
-        driver.quit();
+        driver.close();
     }
 
     @Test
@@ -50,7 +51,7 @@ public class GetPageGetTitleTest {
 
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.hotmail.com/");
-        Assert.assertTrue("The page title is incorrect", driver.getTitle().startsWith("Sign in"));
+        Assert.assertFalse("The page title is incorrect", driver.getTitle().startsWith("Sign in"));
         driver.close();
     }
 

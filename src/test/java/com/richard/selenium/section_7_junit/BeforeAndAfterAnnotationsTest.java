@@ -1,5 +1,7 @@
 /*
 
+Read this class first.
+
 See notes in my evernote for further information :
 
 If you had a class with e.g. 3 @Test methods, if you used a @Before tag, whatever is in the @Before method would run
