@@ -17,7 +17,8 @@ Exercise is as follows:
 package com.richard.selenium.section_7_junit;
 
 import org.junit.*;
-import static org.hamcrest.CoreMatchers.is;
+
+import static org.hamcrest.CoreMatchers.*;
 
 public class MyJunitExampleTest {
 
@@ -77,5 +78,27 @@ public class MyJunitExampleTest {
         setPersonTwoName("richard");
         Assert.assertThat("The two names do not match", getPersonOneName(), is("richard"));
     }
+
+    //AssertThat = Uses a Matcher (which uses generics - look at the source code).
+    //Matcher is part of Hamcrest library
+    //Junit is supplied with a subset of these Matchers
+    //Junit used to have it's own set of customised Matchers but quite a lot of these appear to have been deprecated
+    //Instead, they are in the main Hamcrest library - CoreMatchersClass
+    //http://hamcrest.org/JavaHamcrest/javadoc/1.3/
+    //I've used Hamcrest 'isInstanceOf' in my 'AnotherAnnotationPracticeTest.java' class
+    //And also below - there are loads of cool things to do with this!! 
+
+    @Test
+    public void exampleHamcrestBothMethod() {
+        Assert.assertThat(getPersonOneName(), both(containsString("ri")).and(containsString("ard")));
+    }
+
+    @Test
+    public void exampleHamcrestExampleMethod() {
+        Assert.assertThat(getPersonOneName(), either(containsString("rich")).or(containsString("anne")));
+    }
+
+
+
 
 }
