@@ -24,21 +24,27 @@ public class CalculatorTest {
     }
 
     @Test (expected = Exception.class)
-    public void validateExceptionIsThrownWhenResultIsLessThanZero() {
-        try {
-            calculator.add(-5, -10);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void validateExceptionIsThrownWhenResultIsLessThanZero()
+            throws Exception {
+        calculator.add(-5, -10);
+//
+//        try {
+//            calculator.add(-5, -10);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Test (expected = Exception.class)
-    public void validateExceptionIsThrownWhenResultIsMoreThanTen() {
-        try {
-            calculator.add(5, 10);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void validateExceptionIsThrownWhenResultIsMoreThanTen()
+            throws Exception {
+
+        calculator.add(5, 10);
+//        try {
+//            calculator.add(5, 10);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Test
