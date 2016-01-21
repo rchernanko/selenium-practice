@@ -14,7 +14,7 @@ public class GetPageGetTitleTest {
         WebDriver driver = new FirefoxDriver();
         driver.get("http://www.bbc.co.uk/football/");
         String pageTitle = driver.getTitle();
-        Assert.assertTrue("The page title is incorrect", pageTitle.startsWith("BBC Sport - Football"));
+        Assert.assertTrue("The page title is incorrect", pageTitle.startsWith("Hello Sport - Football"));
         driver.close();
     }
 
