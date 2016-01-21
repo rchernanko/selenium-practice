@@ -35,7 +35,7 @@ public class NavigationExerciseTest {
         driver.navigate().to(BASE_URL + "/selenium");
         Assert.assertThat("Page title is incorrect", driver.getTitle(), startsWith("Selenium Simplified"));
 
-        driver.navigate().to(BASE_URL + "");
+        driver.navigate().to(BASE_URL + "/selenium");
 
 
         driver.navigate().forward();
