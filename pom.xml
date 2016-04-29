@@ -14,7 +14,9 @@
         <junit.version>4.12</junit.version>
         <hamcrest.all.version>1.3</hamcrest.all.version>
         <webdriver.chrome>tools/chromedriver</webdriver.chrome>
-        <webdriver.marionette>tools/wires</webdriver.marionette>
+        <!--For now I am going to use an older version of Firefox and therefore do not require the Marionette driver-->
+        <!--See the readme for more information-->
+        <!--<webdriver.marionette>tools/wires</webdriver.marionette>-->
     </properties>
 
     <dependencies>
@@ -48,7 +50,9 @@
                 <configuration>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>${webdriver.chrome}</webdriver.chrome.driver>
-                        <webdriver.gecko.driver>${webdriver.marionette}</webdriver.gecko.driver>
+                        <!--For now I am going to use an older version of Firefox and therefore do not require the Marionette driver-->
+                        <!--See the readme for more information-->
+                        <!--<webdriver.gecko.driver>${webdriver.marionette}</webdriver.gecko.driver>-->
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
