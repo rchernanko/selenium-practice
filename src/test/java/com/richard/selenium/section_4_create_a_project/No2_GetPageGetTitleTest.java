@@ -6,10 +6,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class GetPageGetTitleTest {
+public class No2_GetPageGetTitleTest {
 
     @Test
     public void isBbcFootballWebsiteTitleCorrect() {
+
+        /*
+
+        If using Firefox Version 45 or below, I can use FirefoxDriver()
+
+        However, if I am testing on Firefox Version 46 or above, I need to use another driver entitled
+        'Marionette' - see readme
+         */
 
         WebDriver driver = new FirefoxDriver();
         driver.get("http://www.bbc.co.uk/football/");
