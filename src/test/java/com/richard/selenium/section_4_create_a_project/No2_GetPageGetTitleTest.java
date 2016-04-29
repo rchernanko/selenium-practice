@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 
 public class No2_GetPageGetTitleTest {
 
@@ -19,10 +20,10 @@ public class No2_GetPageGetTitleTest {
         'Marionette' - see readme
          */
 
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new MarionetteDriver();
         driver.get("http://www.bbc.co.uk/football/");
         String pageTitle = driver.getTitle();
-        Assert.assertTrue("The page title is incorrect", pageTitle.startsWith("BBC Sport - Football"));
+        Assert.assertTrue("The page title is incorrect", pageTitle.startsWith("Football"));
         driver.close();
     }
 
