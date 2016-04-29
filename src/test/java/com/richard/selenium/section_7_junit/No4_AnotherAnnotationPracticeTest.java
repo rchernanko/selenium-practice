@@ -17,31 +17,34 @@ public class No4_AnotherAnnotationPracticeTest {
 
     @Test
     public void isStadiumCapacityUnderFiftyThousand() {
-        FootballClub tottenhamHotspur = new FootballClub("Tottenham Hotspur", "White Hart Lane");
+        No4_FootballClub tottenhamHotspur = new No4_FootballClub("Tottenham Hotspur", "White Hart Lane");
         tottenhamHotspur.setStadiumCapacity(36000);
-        Assert.assertTrue("The football club's stadium has a bigger capacity than 50,000", tottenhamHotspur.getStadiumCapacity() < 50000);
+        Assert.assertTrue("The football club's stadium has a bigger capacity than 50,000",
+                tottenhamHotspur.getStadiumCapacity() < 50000);
     }
 
     @Test
     public void isStadiumCapacityOverFiftyThousand() {
-        FootballClub arsenal = new FootballClub("Arsenal", "Emirates");
+        No4_FootballClub arsenal = new No4_FootballClub("Arsenal", "Emirates");
         arsenal.setStadiumCapacity(60000);
-        Assert.assertFalse("The football club's stadium has a smaller capacity than 50,000", arsenal.getStadiumCapacity() < 50000);
+        Assert.assertFalse("The football club's stadium has a smaller capacity than 50,000",
+                arsenal.getStadiumCapacity() < 50000);
     }
 
     @Test
     public void areFootballClubsEqual() {
-        FootballClub chelsea = new FootballClub("Chelsea", "Stamford Bridge");
-        FootballClub manchesterUnited = new FootballClub("Manchester United", "Old Trafford");
+        No4_FootballClub chelsea = new No4_FootballClub("Chelsea", "Stamford Bridge");
+        No4_FootballClub manchesterUnited = new No4_FootballClub("Manchester United", "Old Trafford");
         Assert.assertNotEquals("The two football clubs are the same", chelsea, manchesterUnited);
         //Checks that the values within the chelsea and manchesterUnited objects are different (see equals method within
-        //the FootballClub class. In this instance, it's simply comparing 'name'
+        //the No4_FootballClub class. In this instance, it's simply comparing 'name'
         //This doesn't check whether the references point to different/same objects (see below - assertNotSame)
     }
 
     @Test
     public void useHamcrestToTestIsInstanceOf() {
-        Assert.assertThat(new FootballClub("Manchester City", "City Of Manchester Stadium"), instanceOf(FootballClub.class));
+        Assert.assertThat(new No4_FootballClub("Manchester City", "City Of Manchester Stadium"),
+                instanceOf(No4_FootballClub.class));
     }
     //Very cool - instanceOf
 
@@ -54,53 +57,8 @@ public class No4_AnotherAnnotationPracticeTest {
 
     @Test
     public void isTopSixClubCorrect() {
-        FootballClub westHamUnited = new FootballClub("West Ham United", "Upton Park");
+        No4_FootballClub westHamUnited = new No4_FootballClub("West Ham United", "Upton Park");
         westHamUnited.setTopSixClub(false);
         Assert.assertThat("West Ham are not a top six club", westHamUnited.getTopSixClub(), is(not(true)));
-    }
-}
-
-class FootballClub {
-
-    private String name;
-    private String stadiumName;
-    private int stadiumCapacity;
-    private boolean isTopSixClub;
-
-    public FootballClub(String name, String stadiumName) {
-        this.name = name;
-        this.stadiumName = stadiumName;
-    }
-
-    public void setStadiumCapacity(int stadiumCapacity) {
-        this.stadiumCapacity = stadiumCapacity;
-    }
-
-    public int getStadiumCapacity() {
-        return stadiumCapacity;
-    }
-
-    public void setTopSixClub(boolean isTopSixClub) {
-        this.isTopSixClub = isTopSixClub;
-    }
-
-    public boolean getTopSixClub() {
-        return isTopSixClub;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        FootballClub that = (FootballClub) o;
-
-        return !(name != null ? !name.equals(that.name) : that.name != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return name != null ? name.hashCode() : 0;
     }
 }

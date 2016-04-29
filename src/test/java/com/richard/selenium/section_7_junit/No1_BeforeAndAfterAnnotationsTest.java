@@ -30,7 +30,8 @@ public class No1_BeforeAndAfterAnnotationsTest {
     If I want to reference a variable in the class below (a static class), the variable must be static
 
     Really weird, if i run this without a debug point, the beforeClass sout actually gets printed last.
-    But then when you debug it, it actually runs first! Alan thinks it's just the console playing odd, buffering etc
+    But then when you debug it, it actually runs first! Alan thinks it's just the IntelliJ console playing up
+    And in fact, when you run this in the terminal, the beforeclass sout prints first :-)
 
     */
 
