@@ -21,18 +21,27 @@ package com.richard.selenium.section_7_junit;
 
 import org.junit.*;
 
-public class BeforeAndAfterAnnotationsTest {
+public class No1_BeforeAndAfterAnnotationsTest {
 
-    //The below will run once per class. Must be static
-    //If I want to reference a variable in the class below (a static class), the variable must be static
+    /*
+
+    The below will run once per class. The BeforeClass method must be static
+
+    If I want to reference a variable in the class below (a static class), the variable must be static
+
+    Really weird, if i run this without a debug point, the beforeClass sout actually gets printed last.
+    But then when you debug it, it actually runs first! Alan thinks it's just the console playing odd, buffering etc
+
+    */
+
     @BeforeClass
     public static void beforeClassMethod() {
-        System.out.println("this i the before class method");
+        System.out.println("@BeforeClass");
     }
 
     @Before
     public void beforeTestMethod() {
-        System.out.println("this is the before test method");
+        System.out.println("@Before");
     }
 
     @Test
@@ -52,16 +61,21 @@ public class BeforeAndAfterAnnotationsTest {
 
     @After
     public void afterTestMethod() {
-        System.out.println("this is the after test method");
+        System.out.println("@After");
     }
 
-    //What is very interesting to know is that when I run this class (BeforeAndAfterAnnotationsTest), the @Tests are not
-    //run in any particular order - it can be random. Won't always be 1,2,3. Can sometimes be 3,1,2.
+    /*
 
-    //The below will run once per class. Must be static
+    What is very useful to know is that when I run this class (No1_BeforeAndAfterAnnotationsTest), the @Tests are not
+    run in any particular order - it can be random. Won't always be 1,2,3. Can sometimes be 3,1,2.
+
+    //The below @AfterClass method will run once per class and similar to the @BeforeClass, it must be static
+
+    */
+
     @AfterClass
     public static void afterClassMethod() {
-        System.out.println("this is the after class method");
+        System.out.println("@AfterClass");
     }
 
 
