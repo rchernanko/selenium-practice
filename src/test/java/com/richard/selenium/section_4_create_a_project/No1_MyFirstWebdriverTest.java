@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class MyFirstSeleniumTest {
+public class No1_MyFirstWebDriverTest {
 
     //In the webdriver world, the driver is the king!
     //Everything we do is based around a driver
@@ -13,7 +13,8 @@ public class MyFirstSeleniumTest {
     @Test
     public void driverIsTheKing() {
 
-        //There are a bunch of drivers available to us within the Selenium library.
+        //There are a bunch of drivers available to us within the Selenium library, although Firefox Driver and HtmlUnitDriver
+        //have recently been taken out into their own dependencies (see my pom.xml file)
         //HtmlUnitDriver is a 'headless' driver - no browser is displayed when running the test
         //We also have FirefoxDriver, IeDriver, ChromeDriver, some mobile drivers + many, many more!
 
@@ -37,9 +38,7 @@ public class MyFirstSeleniumTest {
 
         //Good photo example in my evernote from Marc - Webdriver interface example
 
-        //some more info - https://code.google.com/p/selenium/wiki/NextSteps
-        //https://code.google.com/p/selenium/wiki/GettingStarted
-        //reference - 46 - My first test explored
+        //https://github.com/seleniumhq/selenium
 
         Assert.assertTrue("The page title is incorrect", driver.getTitle().startsWith("Welcome to tottenhamhotspur.com"));
 
@@ -54,23 +53,4 @@ public class MyFirstSeleniumTest {
         //Basically you should use a different driver depending on the type of test you are executing...
         //He will explain in more detail later on in the course.
     }
-
-
-    //Question re: the below - I want to unit test my method above - where should i keep my unit tests within my maven package?
-
-    /*
-
-    @Test
-    public void driverIsTheKing() {
-
-        WebDriver driver = new HtmlUnitDriver();
-        driver.get("http://www.spurs.co.uk/");
-
-        Assert.assertFalse(driver.getTitle().startsWith("Welcome to Arsenal"));
-    }
-
-     */
-
-
-
 }
