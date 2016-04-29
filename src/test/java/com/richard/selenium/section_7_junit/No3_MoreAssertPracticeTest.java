@@ -13,11 +13,12 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 
-public class MoreAssertPracticeTest {
+public class No3_MoreAssertPracticeTest {
 
     String itemOfClothing;
     int size;
     static double price;
+    //Remember that 'price' has to be static because it is being accessed by static methods :-)
 
     @BeforeClass
     public static void setPrice() {

@@ -20,9 +20,10 @@ import org.junit.*;
 
 import static org.hamcrest.CoreMatchers.*;
 
-public class MyJunitExampleTest {
+public class No2_MyJunitExampleTest {
 
     private static String personOneName;
+    //Remember that 'personOneName' has to be static because it is being accessed by static methods :-)
     private int personOneAge;
     private String personTwoName;
 
@@ -56,7 +57,6 @@ public class MyJunitExampleTest {
         setPersonOneAge(15);
     }
 
-
     @Test
     public void exampleAssertTrue() {
         Assert.assertTrue("The start of person one and person two's names is different", getPersonOneName().startsWith("ric"));
@@ -79,14 +79,22 @@ public class MyJunitExampleTest {
         Assert.assertThat("The two names do not match", getPersonOneName(), is("richard"));
     }
 
-    //AssertThat = Uses a Matcher (which uses generics - look at the source code).
-    //Matcher is part of Hamcrest library
-    //Junit is supplied with a subset of these Matchers
-    //Junit used to have it's own set of customised Matchers but quite a lot of these appear to have been deprecated
-    //Instead, they are in the main Hamcrest library - CoreMatchersClass
-    //http://hamcrest.org/JavaHamcrest/javadoc/1.3/
-    //I've used Hamcrest 'isInstanceOf' in my 'AnotherAnnotationPracticeTest.java' class
-    //And also below - there are loads of cool things to do with this!! 
+    /*
+
+    AssertThat = Uses a Matcher (which uses generics - look at the source code).
+
+    Matcher is part of Hamcrest library
+
+    Junit is supplied with a subset of these Matchers
+    Junit used to have it's own set of customised Matchers but quite a lot of these appear to have been deprecated
+
+    Instead, they are in the main Hamcrest library - CoreMatchersClass
+
+    http://hamcrest.org/JavaHamcrest/javadoc/1.3/
+    I've used Hamcrest 'isInstanceOf' in my 'No4_AnotherAnnotationPracticeTest.java' class
+    And also below - there are loads of cool things to do with this!!
+
+     */
 
     @Test
     public void exampleHamcrestBothMethod() {

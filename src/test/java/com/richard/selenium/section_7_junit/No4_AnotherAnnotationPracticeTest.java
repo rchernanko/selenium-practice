@@ -13,7 +13,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 
-public class AnotherAnnotationPracticeTest {
+public class No4_AnotherAnnotationPracticeTest {
 
     @Test
     public void isStadiumCapacityUnderFiftyThousand() {
@@ -34,17 +34,21 @@ public class AnotherAnnotationPracticeTest {
         FootballClub chelsea = new FootballClub("Chelsea", "Stamford Bridge");
         FootballClub manchesterUnited = new FootballClub("Manchester United", "Old Trafford");
         Assert.assertNotEquals("The two football clubs are the same", chelsea, manchesterUnited);
+        //Checks that the values within the chelsea and manchesterUnited objects are different (see equals method within
+        //the FootballClub class. In this instance, it's simply comparing 'name'
+        //This doesn't check whether the references point to different/same objects (see below - assertNotSame)
     }
 
     @Test
     public void useHamcrestToTestIsInstanceOf() {
         Assert.assertThat(new FootballClub("Manchester City", "City Of Manchester Stadium"), instanceOf(FootballClub.class));
     }
+    //Very cool - instanceOf
 
     /*
 
      Assert.assertNotSame("The two football clubs are the same", chelsea, manchesterUnited);
-     assertNotSame = Asserts that two objects do not refer to the same object.
+     assertNotSame = Asserts that two references do not refer to the same object.
 
      */
 
