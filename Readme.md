@@ -10,6 +10,10 @@ This is me messing around with Selenium.
 
 ![FireFoxDriver vs Marionette](readme_images/firefoxDriver_vs_Marionette.png)
 
+And here is how I could set up my code:
+
+![Marionette](readme_images/marionette_settings.png)
+
 ### Chromedriver and other drivers
 
 If not specified, when I try to run tests that require ChromeDriver, (something) will look to my PATH for chromedriver.
