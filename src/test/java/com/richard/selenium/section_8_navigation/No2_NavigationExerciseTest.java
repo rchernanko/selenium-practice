@@ -28,7 +28,7 @@ public class No2_NavigationExerciseTest {
 
      */
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
     private final String BASE_URL = "http://compendiumdev.co.uk";
 
