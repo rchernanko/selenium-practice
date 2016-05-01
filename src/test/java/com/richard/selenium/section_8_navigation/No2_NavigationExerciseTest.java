@@ -49,7 +49,7 @@ public class No2_NavigationExerciseTest {
         driver.get(BASE_URL + "/selenium");
         //get() and navigate.to() result in the same thing - up to you what method you want to use
         driver.navigate().refresh();
-        Assert.assertThat("Refreshing of page is unsucessful", driver.getTitle(), is("Selenium Simplified"));
+        Assert.assertThat("Refreshing of page is unsucessful", driver.getTitle(), is("Selenium Simplified - a book and ebook on Automated Web Testing with Java and Selenium RC"));
     }
 
     @Test
@@ -81,4 +81,6 @@ public class No2_NavigationExerciseTest {
     public void quitDriver() {
         driver.quit();
     }
+
+    //Not passing at the moment. Up to video 64
 }
