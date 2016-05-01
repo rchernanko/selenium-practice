@@ -20,7 +20,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class NavigationBasicExampleTest {
+public class No1_NavigationBasicExampleTest {
 
     private static WebDriver driver;
 
