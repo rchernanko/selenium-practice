@@ -58,7 +58,7 @@ public class No2_NavigationExerciseTest {
         //Go to home page
 
         driver.navigate().to(BASE_URL);
-        Assert.assertThat("Page title is incorrect", driver.getTitle(), is("Selenium Simplified"));
+        Assert.assertThat("Page title is incorrect", driver.getTitle(), is("Software Testing Essays, Book Reviews and Information"));
 
         //Then go to search page
 
@@ -69,7 +69,7 @@ public class No2_NavigationExerciseTest {
         //Then navigate back to the home page
 
         driver.navigate().back();
-        Assert.assertThat("Page title is incorrect", driver.getTitle(), startsWith("Selenium Simplified"));
+        Assert.assertThat("Page title is incorrect", driver.getTitle(), startsWith("Software Testing Essays"));
 
         //Then navigate forward to the search page
 
@@ -82,5 +82,5 @@ public class No2_NavigationExerciseTest {
         driver.quit();
     }
 
-    //Not passing at the moment. Up to video 64
+    //Up to video 64
 }
