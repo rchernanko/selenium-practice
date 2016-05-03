@@ -92,5 +92,17 @@ public class No2_NavigationExerciseTest {
         driver.quit();
     }
 
-    //Up to video 65
+    /*
+
+    Does navigation require synchronisation?
+
+    When you do a driver.get() / driver.navigate.to(), webDriver will block until the HTML for the page is loaded.
+
+    BUT, HTML being loaded does not necessarily mean that the page is ready for manipulation or interrogation.
+    Execution of JavaScript may not have taken place at this point.
+
+    Other forms of navigation do require synchronisation and we will cover these in latter tutorials
+    (e.g. clicking on buttons, links, forms etc - typical user navigation)
+
+    */
 }
