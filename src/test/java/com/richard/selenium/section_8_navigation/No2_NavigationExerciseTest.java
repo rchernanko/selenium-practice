@@ -92,5 +92,5 @@ public class No2_NavigationExerciseTest {
         driver.quit();
     }
 
-    //Up to video 64
+    //Up to video 65
 }
