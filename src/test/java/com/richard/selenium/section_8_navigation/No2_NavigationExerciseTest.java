@@ -9,6 +9,10 @@ package com.richard.selenium.section_8_navigation;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import static org.hamcrest.CoreMatchers.*;
 
 public class No2_NavigationExerciseTest {
@@ -30,7 +34,9 @@ public class No2_NavigationExerciseTest {
 
     private WebDriver driver;
 
-    private final String BASE_URL = "http://compendiumdev.co.uk";
+    private final String PROTOCOL = "http";
+    private final String DOMAIN = "www.compendiumdev.co.uk";
+    private final String ROOT_URL = PROTOCOL + "://" + DOMAIN;
 
     @Before
     public void createInstanceOfWebdriver() {
@@ -38,18 +44,21 @@ public class No2_NavigationExerciseTest {
     }
 
     @Test
-    public void checkNavigateMethod() {
-        driver.navigate().to(BASE_URL);
+    public void checkNavigateToMethod() {
+        driver.navigate().to(ROOT_URL);
+        //get() and navigate.to() result in the same thing - up to you what method you want to use
         Assert.assertTrue("Page title is incorrect",
                 driver.getTitle().matches("Software Testing Essays, Book Reviews and Information"));
     }
 
     @Test
-    public void checkRefreshMethod() {
-        driver.get(BASE_URL + "/selenium");
-        //get() and navigate.to() result in the same thing - up to you what method you want to use
+    public void checkRefreshMethod() throws MalformedURLException {
+        URL seleniumPage = new URL(PROTOCOL, DOMAIN, "/selenium");
+        //The above is a Java class that simply allows you to build a URL
+        driver.navigate().to(seleniumPage);
+        String initalPageTitle = driver.getTitle();
         driver.navigate().refresh();
-        Assert.assertThat("Refreshing of page is unsucessful", driver.getTitle(), is("Selenium Simplified - a book and ebook on Automated Web Testing with Java and Selenium RC"));
+        Assert.assertThat("Refreshing of page is unsucessful", driver.getTitle(), is(initalPageTitle));
     }
 
     @Test
@@ -57,12 +66,13 @@ public class No2_NavigationExerciseTest {
 
         //Go to home page
 
-        driver.navigate().to(BASE_URL);
+        driver.get(ROOT_URL);
+        //get() and navigate.to() result in the same thing - up to you what method you want to use
         Assert.assertThat("Page title is incorrect", driver.getTitle(), is("Software Testing Essays, Book Reviews and Information"));
 
         //Then go to search page
 
-        driver.navigate().to(BASE_URL + "/selenium/search.php");
+        driver.navigate().to(ROOT_URL + "/selenium/search.php");
         Assert.assertThat("Page title is incorrect", driver.getTitle(),
                 startsWith("Selenium Simplified Search Engine"));
 
