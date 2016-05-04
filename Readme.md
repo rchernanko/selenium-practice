@@ -31,3 +31,13 @@ In this instance, despite me using brew on my laptop, I have used the maven sure
 ![My pom file](readme_images/pom_2.png)
 
 And the advantage of this is that I don't have to keep specifying chromedriver at the beginning of every individual test.
+
+### Interrogation
+
+Be careful with driver.getPageSource():
+
+The source code that is downloaded is not exactly the same as the file that is on the actual server.
+
+Different browsers will tailor the page source ever so slightly different:
+
+![Be careful with get page source](readme_images/get_page_source_interrogation.png)

@@ -45,9 +45,26 @@ public class No1_Driver_InterrogationTest {
 
 		//assert current url
 		Assert.assertTrue("Current url is incorrect", (driver.getCurrentUrl().equals(BASE_URL)));
+		//Could've also done:
+		//Assert.assertEquals("Current url is incorrect", driver.getCurrentUrl(), BASE_URL);
 
 		//assert page source contains specific text
 		Assert.assertThat("Page source does not contain specific text", driver.getPageSource(), containsString("A paragraph of text"));
+		//Could've also done:
+		//Assert.assertTrue(driver.getPageSource().contains("A paragraph of text"));
+
+		/*
+
+		Be careful with driver.getPageSource():
+
+		The source code that is downloaded is not exactly the same as the file that is on the actual server.
+
+		Different browsers will tailor the page source ever so slightly different.
+
+		See diagram in the readme file.
+
+		*/
+
 	}
 
 	@After
@@ -55,5 +72,5 @@ public class No1_Driver_InterrogationTest {
 		driver.quit();
 	}
 
-	//Up to lesson 70
+	//Up to lesson 71
 }
