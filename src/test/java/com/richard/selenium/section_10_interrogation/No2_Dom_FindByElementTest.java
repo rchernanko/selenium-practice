@@ -41,7 +41,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.fail;
 
-public class No2_Dom_FindByTest {
+public class No2_Dom_FindByElementTest {
 
     /*
 
@@ -63,7 +63,18 @@ public class No2_Dom_FindByTest {
 
     Let's write some tests for interrogation of the dom (point 2 in comments above)
 
-     */
+    */
+
+    /*
+
+    Still need to do the below
+
+        - findElement(By.xpath) TODO
+        - isEnabled() TODO
+        - getLocation() TODO
+        - getCssValue() TODO
+
+    */
 
     private static WebDriver driver;
     private static final String BASE_URL = "http://www.compendiumdev.co.uk";
@@ -80,8 +91,9 @@ public class No2_Dom_FindByTest {
         Assert.assertThat("Element text is not correct", element.getText(), is("jump to para 21"));
     }
 
-    @Test //TODO xpath
+    @Test //TODO
     public void findElementByXpathTest() {
+        Assert.assertTrue("Still need to do this", false);
     }
 
     @Test
@@ -108,16 +120,18 @@ public class No2_Dom_FindByTest {
         Assert.assertTrue("WebElement's id is not correct", element.getAttribute("id").equals("p26"));
     }
 
-    @Test //TODO ByTagName
+    @Test
     public void findElementByTagNameTest() {
-        WebElement element = driver.findElement(By.tagName(""));
-        Assert.assertThat("", true, is(true));
+        WebElement element = driver.findElement(By.tagName("div"));
+        //The above (By.tagName) will get the first element with the tag name "div"
+        Assert.assertThat("", element.getAttribute("id"), is("div21"));
     }
 
-    @Test //TODO getTagName
+    @Test
     public void findElementByPartialLinkTextTest() {
         WebElement element = driver.findElement(By.partialLinkText("para 12"));
-        Assert.assertEquals(element.getTagName(), "sdfsd");
+        Assert.assertEquals(element.getTagName(), "a");
+        //The above (getTagName) will get the tag of this element (which is 'a' - an href, a link)
     }
 
     @Test
@@ -125,20 +139,6 @@ public class No2_Dom_FindByTest {
         WebElement element = driver.findElement(By.cssSelector("#li16"));
         Assert.assertTrue("The WebElement is not displayed", element.isDisplayed());
     }
-
-    @Test //TODO assertIsEnabled
-    public void isElementSelectedTest() {
-        WebElement element = driver.findElement(By.cssSelector("#li16"));
-    }
-
-    //few more to do as well - check the top TODOS
-
-    /*
-
-    - getLocation() TODO
-    - getCssValue() TODO
-
-    */
 
     /*
 
