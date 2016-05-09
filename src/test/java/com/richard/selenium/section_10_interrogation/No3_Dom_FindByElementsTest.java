@@ -10,7 +10,10 @@ e.g. At 'http://www.compendiumdev.co.uk/selenium/find_by_playground.php'...
 
 ...driver.findElements(By.className("normal"));
 
-The above returns ALL elements with the className "normal"
+The above returns ALL elements with the className "normal".
+
+One subtlety to be aware of with .findElements is that if no elements are found, no exceptions are thrown.
+Instead the size of the list that .findElements() returns is simply 0
 
 */
 
@@ -57,7 +60,7 @@ public class No3_Dom_FindByElementsTest {
         Assert.assertTrue("Expected a p tag", foundTags.contains("p"));
         Assert.assertTrue("Expected a ul tag", foundTags.contains("ul"));
         Assert.assertTrue("Expected a li tag", foundTags.contains("li"));
-        Assert.assertTrue("Expected an a tag", foundTags.contains("as"));
+        Assert.assertTrue("Expected an a tag", foundTags.contains("a"));
         Assert.assertFalse("Did not expect a div tag", foundTags.contains("div"));
     }
 

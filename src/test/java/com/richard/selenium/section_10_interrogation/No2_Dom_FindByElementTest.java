@@ -91,10 +91,14 @@ public class No2_Dom_FindByElementTest {
         Assert.assertThat("Element text is not correct", element.getText(), is("jump to para 21"));
     }
 
-    @Test //TODO
+    /*
+
+    @Test //TODO - But this will be covered in a later video so commenting out for now
     public void findElementByXpathTest() {
         Assert.assertTrue("Still need to do this", false);
     }
+
+     */
 
     @Test
     public void findElementByCssSelectorTest() {
@@ -124,7 +128,7 @@ public class No2_Dom_FindByElementTest {
     public void findElementByTagNameTest() {
         WebElement element = driver.findElement(By.tagName("div"));
         //The above (By.tagName) will get the first element with the tag name "div"
-        Assert.assertThat("", element.getAttribute("id"), is("div21"));
+        Assert.assertThat("", element.getAttribute("id"), is("div1"));
     }
 
     @Test
