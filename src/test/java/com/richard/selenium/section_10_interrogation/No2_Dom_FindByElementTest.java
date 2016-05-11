@@ -109,7 +109,7 @@ public class No2_Dom_FindByElementTest {
     @Test
     public void findElementByClassNameTest() {
         WebElement element = driver.findElement(By.className("specialDiv"));
-        Assert.assertEquals("Element text is not correct", element.getAttribute("name"), "mydivname");
+        Assert.assertEquals("Element text is not correct", "mydivname", element.getAttribute("name"));
     }
 
     @Test
@@ -134,7 +134,7 @@ public class No2_Dom_FindByElementTest {
     @Test
     public void findElementByPartialLinkTextTest() {
         WebElement element = driver.findElement(By.partialLinkText("para 12"));
-        Assert.assertEquals(element.getTagName(), "a");
+        Assert.assertEquals("a", element.getTagName());
         //The above (getTagName) will get the tag of this element (which is 'a' - an href, a link)
     }
 

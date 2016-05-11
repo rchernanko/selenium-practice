@@ -30,7 +30,7 @@ public class No4_Dom_FindByElementsExerciseTest {
     @Test
     public void find25AElements() {
         List<WebElement> elements = driver.findElements(By.partialLinkText("jump to para"));
-        Assert.assertEquals("The number of a elements is incorrect", elements.size(), 25);
+        Assert.assertEquals("The number of a elements is incorrect", 25, elements.size());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class No4_Dom_FindByElementsExerciseTest {
     @Test
     public void find41ParagraphsInTotal() {
         List<WebElement> elements = driver.findElements(By.tagName("p"));
-        Assert.assertEquals("The total mumber of paragraph elements is incorrect", elements.size(), 41);
+        Assert.assertEquals("The total mumber of paragraph elements is incorrect", 41, elements.size());
     }
 
     @AfterClass
