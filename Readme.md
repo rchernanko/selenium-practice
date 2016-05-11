@@ -41,3 +41,19 @@ The source code that is downloaded is not exactly the same as the file that is o
 Different browsers will tailor the page source ever so slightly different:
 
 ![Be careful with get page source](readme_images/get_page_source_interrogation.png)
+
+### findElement(By...) examples:
+
+Below are some examples of the .findElement(By...) interrogation methods
+
+1) .findElement(By.name)
+
+![findElement(By.name)](readme_images/findElementByName.png)
+
+2) .findElement(By.cssSelector)
+
+![findElement(By.cssSelector)](readme_images/findElementByCssSelector.png)
+
+3) .findElement(By.id)
+
+![findElement(By.id)](readme_images/findElementByIdTest.png)
