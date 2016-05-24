@@ -57,3 +57,33 @@ Below are some examples of the .findElement(By...) interrogation methods
 3) .findElement(By.id)
 
 ![findElement(By.id)](readme_images/findElementByIdTest.png)
+
+### CSS selectors - Introduction section and useful screenshots
+
+1) Match attribute
+
+![css_selectors_match_attribute](readme_images/css_selectors_match_attribute.png)
+
+2) Match tag and id combined
+
+![css_selectors_match_tag_and_id_combined](readme_images/css_selectors_match_tag_and_id_combined.png)
+
+3) Match tag and class name combined
+
+![css_selectors_match_tag_and_class_name_combined](readme_images/css_selectors_match_tag_and_class_name_combined.png)
+
+4) Match tag
+
+![css_selectors_match_tag](readme_images/css_selectors_match_tag.png)
+
+5) CSS attribute matching - some possible options:
+
+![css_selectors_attribute_matching](readme_images/css_selectors_attribute_matching.png)
+
+6) CSS attribute matching - example 1:
+
+![css_selectors_attribute_matching](readme_images/css_selectors_attribute_matching_example_1.png)
+
+7) CSS attribute matching - example 2:
+
+![css_selectors_attribute_matching](readme_images/css_selectors_attribute_matching_example_2.png)
