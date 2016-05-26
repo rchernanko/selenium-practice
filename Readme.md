@@ -87,3 +87,23 @@ Below are some examples of the .findElement(By...) interrogation methods
 7) CSS attribute matching - example 2:
 
 ![css_selectors_attribute_matching](readme_images/css_selectors_attribute_matching_example_2.png)
+
+8) CSS attribute matching - match any div tag which contains 'Div' in its class name (a partial match):
+
+![css_selectors_partial_match_match_any_div_tag_which_contains_div_in_class_name](readme_images/css_selectors_partial_match_match_any_div_tag_which_contains_div_in_class_name.png)
+
+9) CSS attribute matching - match any div tag where class name ends with 'Div':
+
+![css_selectors_match_any_div_tag_where_class_name_ends_with_div](readme_images/css_selectors_match_any_div_tag_where_class_name_ends_with_div.png)
+
+10) CSS attribute matching - match any div tag where the class name starts with 'spe':
+
+![css_selectors_match_any_div_tag_where_class_name_starts_with_spe](readme_images/css_selectors_match_any_div_tag_where_class_name_starts_with_spe.png)
+
+11) CSS attribute matching - match any div tags that has class name as 'nestedDiv' AND name as 'nestedDiv':
+
+![css_selectors_match_any_div_tag_that_has_class_name_as_nestedDiv_and_name_as_nestedDiv](readme_images/css_selectors_match_any_div_tag_that_has_class_name_as_nestedDiv_and_name_as_nestedDiv.png)
+
+12) CSS attribute matching - match any div tags that has class name as 'nestedDiv' OR any div tag that has an 'a' in its name:
+
+![css_selectors_match_any_div_tag_that_has_class_name_as_nestedDiv_or_any_div_tag_that_has_a_in_its_name](readme_images/css_selectors_match_any_div_tag_that_has_class_name_as_nestedDiv_or_any_div_tag_that_has_a_in_its_name.png)
