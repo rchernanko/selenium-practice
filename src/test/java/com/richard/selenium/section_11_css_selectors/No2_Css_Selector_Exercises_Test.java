@@ -82,4 +82,8 @@ public class No2_Css_Selector_Exercises_Test {
         driver.quit();
     }
 
+    /*
+
+    There is some interesting photographs relating to css path in the readme file
+     */
 }

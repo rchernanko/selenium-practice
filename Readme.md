@@ -107,3 +107,13 @@ Below are some examples of the .findElement(By...) interrogation methods
 12) CSS attribute matching - match any div tags that has class name as 'nestedDiv' OR any div tag that has an 'a' in its name:
 
 ![css_selectors_match_any_div_tag_that_has_class_name_as_nestedDiv_or_any_div_tag_that_has_a_in_its_name](readme_images/css_selectors_match_any_div_tag_that_has_class_name_as_nestedDiv_or_any_div_tag_that_has_a_in_its_name.png)
+
+### CSS paths
+
+Some useful photos / resources on CSS paths:
+
+![css_selectors_some_paths](readme_images/css_selectors_some_paths.png)
+
+![css_selectors_useful_info1](readme_images/css_selectors_useful_info1.png)
+
+![css_selectors_useful_info2](readme_images/css_selectors_useful_info2.png)
