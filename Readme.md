@@ -117,3 +117,9 @@ Some useful photos / resources on CSS paths:
 ![css_selectors_useful_info1](readme_images/css_selectors_useful_info1.png)
 
 ![css_selectors_useful_info2](readme_images/css_selectors_useful_info2.png)
+
+### Xpath selector - some basics
+
+At the time of writing, I have not written any coded tests for xpath. I simply moved on to the next videos. However, here are some basic selectors:
+
+![xpath_selectors_some_basics](readme_images/xpath_selectors_some_basics.png)
