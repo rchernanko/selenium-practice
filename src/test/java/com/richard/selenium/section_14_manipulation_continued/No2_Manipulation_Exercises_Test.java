@@ -39,6 +39,7 @@ public class No2_Manipulation_Exercises_Test {
     private static final String CHECKBOX_1 = "input[value=\"cb1\"]";
     private static final String CHECKBOX_2 = "input[value=\"cb2\"]";
     private static final String CHECKBOX_3 = "input[value=\"cb3\"]";
+    private static final String CHOOSE_FILE_TO_UPLOAD_BUTTON = "input[type=\"file\"]";
     private static final String DROPDOWN_OPTION_5 = "tr [value=\"dd5\"]";
     private static final String COMMENTS_AREA_ON_PROCESSED_PAGE = "#_comments #_valuecomments";
     private static final String RADIO_BUTTON_2_ON_PROCESSED_PAGE = "#_radioval #_valueradioval";
@@ -46,6 +47,7 @@ public class No2_Manipulation_Exercises_Test {
     private static final String CHECKBOX_2_AREA_ON_PROCESSED_PAGE = "#_checkboxes #_valuecheckboxes1";
     private static final String CHECKBOX_3_AREA_ON_PROCESSED_PAGE = "#_checkboxes #_valuecheckboxes2";
     private static final String DROPDOWN_AREA_ON_PROCESSED_PAGE = "#_dropdown #_valuedropdown";
+    private static final String FILENAME_ON_PROCESSED_PAGE = "#_valuefilename";
 
     @Before
     public void instantiateDriverAndVisitTestPage() {
@@ -210,7 +212,13 @@ public class No2_Manipulation_Exercises_Test {
     //7 For bonus points, submit with a file, and check name on output
     @Test
     public void submitWithAFile() {
-        //TODO - think you can send the file with a send keys but try this out
+
+        WebElement chooseFileToUploadButton = driver.findElement(By.cssSelector(CHOOSE_FILE_TO_UPLOAD_BUTTON));
+        chooseFileToUploadButton.sendKeys("/manipulation_test_file.txt");
+        submitForm();
+        waitUntilProcessedPageLoads();
+
+        Assert.assertEquals("File has not been uploaded correctly", "manipulation_test_file.txt", driver.findElement(By.cssSelector(FILENAME_ON_PROCESSED_PAGE)).getText());
     }
 
     private void assertCheckboxResults() {
