@@ -214,7 +214,14 @@ public class No2_Manipulation_Exercises_Test {
     public void submitWithAFile() {
 
         WebElement chooseFileToUploadButton = driver.findElement(By.cssSelector(CHOOSE_FILE_TO_UPLOAD_BUTTON));
+
+        //For filename fields, we use sendKeys();
+
         chooseFileToUploadButton.sendKeys("/manipulation_test_file.txt");
+
+        //TODO there are some cool things I can do with sendKeys() - have a look at an image I've added in the readme
+        //TODO and I need to read around the documentation and have a play around with it myself
+
         submitForm();
         waitUntilProcessedPageLoads();
 
