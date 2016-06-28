@@ -33,7 +33,7 @@ public class No1_Introduction {
     "
 
     WHEN we encounter situations where the basic WebDriver commands don't fully cover the real world, that's where we
-    turn to user interactions - these may more accurately simulate real-life behaviour better
+    turn to user interactions - these MAY more accurately simulate real-life behaviour better
 
     E.g. dragging and dropping things.
 
@@ -54,8 +54,11 @@ public class No1_Introduction {
 
     SOME ACTIONS SEQUENCES:
 
-    .keyDown()
-    .keyUp()
+    .keyDown() - relate to modifier keys (shift, control, alt)
+    .keyUp() - relate to modifier keys (shift, control, alt)
+
+    Other commands that are related to the mouse...
+
     .sendKeys()
     .clickAndHold()
     .release()
@@ -66,6 +69,9 @@ public class No1_Introduction {
     .contextClick()
     .dragAndDrop()
     .dragAndDropBy()
+
+    Others...
+
     .build() - you'd use this if you want to store and re-use the action sequence. Otherwise just use .perform()
     .perform()
 
