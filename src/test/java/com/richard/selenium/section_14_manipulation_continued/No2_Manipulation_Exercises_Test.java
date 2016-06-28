@@ -179,7 +179,7 @@ public class No2_Manipulation_Exercises_Test {
         to the above)
 
         If (manually), a user firstly clicked on option 0, then on option 1 and then 2...ONLY option 2 would actually
-        be end up being selected...
+        be end up being selected... (it's like doing a CTRL + click)
 
         However, web driver works differently and the above will actually ensure that options 0, 1 and 2 are ALL
         selected in the multi select area
