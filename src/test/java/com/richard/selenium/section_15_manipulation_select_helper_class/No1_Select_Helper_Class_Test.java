@@ -1,5 +1,6 @@
 package com.richard.selenium.section_15_manipulation_select_helper_class;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,10 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.sql.rowset.spi.SyncResolver;
 import java.util.List;
 
 public class No1_Select_Helper_Class_Test {
@@ -48,8 +49,8 @@ public class No1_Select_Helper_Class_Test {
 
     private WebDriver driver;
     private static final String BASE_URL = "http://compendiumdev.co.uk";
-    private static final String MULTI_SELECT_AREA = "[multiple=\"multiple\"]";
-    private static final String DROPDOWN_AREA = "[name=\"dropdown\"]";
+    private static final String MULTI_SELECT_AREA = "select[multiple=\"multiple\"]";
+    private static final String SUBMIT_BUTTON = "input[type=\"submit\"]";
 
     @Before
     public void instantiateDriverAndVisitTestPage() {
@@ -57,22 +58,56 @@ public class No1_Select_Helper_Class_Test {
         driver.get(BASE_URL + "/selenium/basic_html_form.html");
     }
 
-    //1) Submit form and assert page title changes
     @Test
     public void submitFormAndAssertPageTitleChanges() {
-//        String pageTitleBeforeClickingSubmit = driver.getTitle();
+
+        WebElement multipleSelectElement = driver.findElement(By.cssSelector(MULTI_SELECT_AREA));
+
+        Select multipleSelect = new Select(multipleSelectElement);
+        Assert.assertTrue(multipleSelect.isMultiple());
+
+        List<WebElement> selectedElements = multipleSelect.getAllSelectedOptions();
+        Assert.assertEquals("By default expected only 1 selected", 1, selectedElements.size());
+        Assert.assertEquals("By default expected different item", "Selection Item 4", selectedElements.get(0).getText().trim());
+
+        multipleSelect.deselectAll();
+
+        selectedElements = multipleSelect.getAllSelectedOptions();
+        Assert.assertEquals("Expected cleared", 0, selectedElements.size());
+
+        multipleSelect.selectByVisibleText("Selection Item 1");
+        multipleSelect.selectByIndex(1);
+        multipleSelect.selectByValue("ms3"); //after executing these 3 lines, 3 items will be selected
+
+        selectedElements = multipleSelect.getAllSelectedOptions();
+        Assert.assertEquals("Expected 3 selected", 3, selectedElements.size());
+
+        submitForm();
+        waitUntilProcessedPageLoads();
+
+        /*
+
+        The below was me just messing around with the Select APIs...
+
         WebElement multiSelectArea = driver.findElement(By.cssSelector(MULTI_SELECT_AREA));
-        Select selectedWebElement = new Select(multiSelectArea);
-        selectedWebElement.selectByVisibleText("Selection Item 4");
+        Select selectedMultiSelectArea = new Select(multiSelectArea);
+        selectedMultiSelectArea.deselectAll();
+        selectedMultiSelectArea.selectByVisibleText("Selection Item 4");
+        selectedMultiSelectArea.getOptions().get(1).click();
 
-        WebElement dropdownArea = driver.findElement(By.cssSelector(DROPDOWN_AREA));
-        Select selectedWebElement2 = new Select(dropdownArea);
-//        selectedWebElement2.selectByVisibleText("Drop Down Item 4"); //won't work
-        selectedWebElement2.selectByValue("dd4");
+         */
+    }
 
-//
-//        submitForm();
-//        waitUntilProcessedPageLoads();
-//        Assert.assertNotEquals("Page title has not changed", pageTitleBeforeClickingSubmit, driver.getTitle());
+    private void waitUntilProcessedPageLoads() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.titleIs("Processed Form Details"));
+    }
+
+    private void submitForm() {
+        driver.findElement(By.cssSelector(SUBMIT_BUTTON)).submit();
+    }
+
+    @After
+    public void quitDriver() {
+        driver.quit();
     }
 }
