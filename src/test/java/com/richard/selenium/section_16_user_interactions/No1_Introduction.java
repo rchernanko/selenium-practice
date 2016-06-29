@@ -40,6 +40,14 @@ public class No1_Introduction {
     BUT WARNING - user interactions are more complicated - use them as sparsely as possible if you want to make your
     tests robust. User interactions change between browser versions, driver versions etc.
 
+    Actions is different to an instance of WebDriver in that it uses native events (driver, by default, does not). Note
+    that you can tell a driver to use native events, e.g:
+
+    FirefoxProfile profile = new FirefoxProfile();
+    profile.setEnableNativeEvents(true);
+
+    ...
+
     But still really important to learn about user interactions as sometimes they are absolutely necessary...
 
     HOW TO USE?
