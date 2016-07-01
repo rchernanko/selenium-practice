@@ -5,10 +5,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import static org.hamcrest.CoreMatchers.both;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.is;
 
 public class No2_User_Interaction_Exercises_Test {
 
@@ -22,7 +27,7 @@ public class No2_User_Interaction_Exercises_Test {
     2) Drag and drop draggable2 to droppable1 and assert droppable1 text change to "Get Off Me!"
     3) Press control+B and assert for text change on draggable1 to "Bwa! Ha! Ha!"
 
-    Optional challenages:
+    Optional challenges:
 
     1) Can you draw something in the canvas?
     2) Control+Space and red squares say "Let GO!!" Can you assert for this?
@@ -63,7 +68,9 @@ public class No2_User_Interaction_Exercises_Test {
     //3) Press control+B and assert for text change on draggable1 to "Bwa! Ha! Ha!"
     @Test
     public void pressControlBAndAssertText() {
-
+        new Actions(driver).keyDown(Keys.CONTROL).sendKeys(String.valueOf('\u0062')).perform();
+        WebElement draggable1Element = driver.findElement(By.cssSelector(DRAGGABLE_1_ELEMENT));
+        Assert.assertThat("Text has not changed", draggable1Element.getText(), is("Bwa! Ha! Ha!"));
     }
 
     @After
