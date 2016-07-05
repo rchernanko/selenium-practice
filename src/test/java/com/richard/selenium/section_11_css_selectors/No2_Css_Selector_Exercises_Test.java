@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 
 public class No2_Css_Selector_Exercises_Test {
 
@@ -21,7 +21,7 @@ public class No2_Css_Selector_Exercises_Test {
 
     @Before
     public void createInstanceOfWebDriverAndNavigateToPage() {
-        driver = new FirefoxDriver();
+        driver = new MarionetteDriver();
         driver.navigate().to(BASE_URL + "/selenium/find_by_playground.php");
     }
 

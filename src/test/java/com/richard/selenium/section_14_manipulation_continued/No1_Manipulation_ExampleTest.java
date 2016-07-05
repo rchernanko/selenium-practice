@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 
 public class No1_Manipulation_ExampleTest {
 
@@ -16,7 +16,7 @@ public class No1_Manipulation_ExampleTest {
 
     @Before
     public void instantiateDriverAndVisitTestPage() {
-        driver = new FirefoxDriver();
+        driver = new MarionetteDriver();
         driver.get(BASE_URL + "/selenium/basic_html_form.html");
     }
 

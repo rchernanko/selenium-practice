@@ -26,7 +26,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 
 import java.util.HashSet;
 import java.util.List;
@@ -41,7 +41,7 @@ public class No3_Dom_FindByElementsTest {
 
     @Before
     public void createDriverInstanceAndNavigateToPage(){
-        driver = new FirefoxDriver();
+        driver = new MarionetteDriver();
         driver.get(BASE_URL + "/selenium/find_by_playground.php");
     }
 

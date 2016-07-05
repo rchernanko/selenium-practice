@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.firefox.MarionetteDriver;
 
 public class No2_GetPageGetTitleTest {
@@ -45,7 +45,7 @@ public class No2_GetPageGetTitleTest {
 
          */
 
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new MarionetteDriver();
         driver.get("http://www.channel4.com/");
         Assert.assertTrue("The page title is incorrect", driver.getTitle().startsWith("On Demand"));
         driver.close();

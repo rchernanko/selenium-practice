@@ -18,7 +18,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 
 public class No1_NavigationBasicExampleTest {
 
@@ -26,7 +26,7 @@ public class No1_NavigationBasicExampleTest {
 
     @BeforeClass
     public static void createDriver() {
-        driver = new FirefoxDriver();
+        driver = new MarionetteDriver();
     }
 
     @Test

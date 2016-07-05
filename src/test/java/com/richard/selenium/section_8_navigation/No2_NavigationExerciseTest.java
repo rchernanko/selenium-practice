@@ -48,7 +48,7 @@ public class No2_NavigationExerciseTest {
         driver.navigate().to(ROOT_URL);
         //get() and navigate.to() result in the same thing - up to you what method you want to use
         Assert.assertTrue("Page title is incorrect",
-                driver.getTitle().matches("Software Testing Essays, Book Reviews and Information"));
+                driver.getTitle().matches("Software Testing Consultancy, Books and Online Training"));
     }
 
     @Test
@@ -68,7 +68,7 @@ public class No2_NavigationExerciseTest {
 
         driver.get(ROOT_URL);
         //get() and navigate.to() result in the same thing - up to you what method you want to use
-        Assert.assertThat("Page title is incorrect", driver.getTitle(), is("Software Testing Essays, Book Reviews and Information"));
+        Assert.assertThat("Page title is incorrect", driver.getTitle(), is("Software Testing Consultancy, Books and Online Training"));
 
         //Then go to search page
 
@@ -79,7 +79,7 @@ public class No2_NavigationExerciseTest {
         //Then navigate back to the home page
 
         driver.navigate().back();
-        Assert.assertThat("Page title is incorrect", driver.getTitle(), startsWith("Software Testing Essays"));
+        Assert.assertThat("Page title is incorrect", driver.getTitle(), startsWith("Software Testing Consultancy"));
 
         //Then navigate forward to the search page
 

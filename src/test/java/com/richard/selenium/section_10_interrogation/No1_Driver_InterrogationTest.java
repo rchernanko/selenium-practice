@@ -36,7 +36,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 
 import static org.hamcrest.CoreMatchers.*;
 
@@ -49,7 +49,7 @@ public class No1_Driver_InterrogationTest {
 
     @Before
     public void createDriverInstance() {
-        driver = new FirefoxDriver();
+        driver = new MarionetteDriver();
     }
 
     @Test
