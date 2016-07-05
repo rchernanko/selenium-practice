@@ -16,7 +16,8 @@
         <webdriver.chrome>tools/chromedriver</webdriver.chrome>
         <!--For now I am going to use an older version of Firefox and therefore do not require the Marionette driver-->
         <!--See the readme for more information-->
-        <!--<webdriver.marionette>tools/wires</webdriver.marionette>-->
+        <!--UPDATE - I am now trying it out (from Section 18 onwards)-->
+        <webdriver.marionette>tools/wires</webdriver.marionette>
     </properties>
 
     <dependencies>
@@ -52,7 +53,8 @@
                         <webdriver.chrome.driver>${webdriver.chrome}</webdriver.chrome.driver>
                         <!--For now I am going to use an older version of Firefox and therefore do not require the Marionette driver-->
                         <!--See the readme for more information-->
-                        <!--<webdriver.gecko.driver>${webdriver.marionette}</webdriver.gecko.driver>-->
+                        <!--UPDATE - I am now trying it out (from Section 18 onwards)-->
+                        <webdriver.gecko.driver>${webdriver.marionette}</webdriver.gecko.driver>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
