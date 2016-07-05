@@ -1,4 +1,4 @@
-package com.richard.selenium.section_18_frames_and_windows;
+package com.richard.selenium.section_18_frames;
 
 import org.junit.After;
 import org.junit.Assert;
