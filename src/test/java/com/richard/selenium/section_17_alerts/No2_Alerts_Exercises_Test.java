@@ -28,6 +28,8 @@ public class No2_Alerts_Exercises_Test {
     private static final String ALERT_BUTTON = "#alertexamples";
     private static final String CONFIRM_BUTTON_TEXT = "#confirmreturn";
     private static final String CONFIRM_BUTTON = "#confirmexample";
+    private static final String PROMPT_BUTTON_TEXT = "#promptreturn";
+    private static final String PROMPT_BUTTON = "#promptexample";
 
     @Before
     public void instantiateDriverAndGoToPage() {
@@ -75,6 +77,59 @@ public class No2_Alerts_Exercises_Test {
         Assert.assertTrue("The text has not changed correctly",
                 !textAfterAcceptingAlert.equals(textBeforeAcceptingAlert)
                         && textAfterAcceptingAlert.equals("false"));
+    }
+
+    @Test
+    public void acceptPromptButtonAlert() {
+        String textBeforeAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        driver.findElement(By.cssSelector(PROMPT_BUTTON)).click();
+        Alert alert = driver.switchTo().alert();
+        Assert.assertEquals("The alert text is not correct", "I prompt you", alert.getText());
+        alert.accept();
+        String textAfterAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        Assert.assertTrue("The text has not changed correctly",
+                !textAfterAcceptingAlert.equals(textBeforeAcceptingAlert)
+                        && textAfterAcceptingAlert.equals("change me"));
+    }
+
+    @Test
+    public void dismissPromptButtonAlert() {
+        String textBeforeAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        driver.findElement(By.cssSelector(PROMPT_BUTTON)).click();
+        Alert alert = driver.switchTo().alert();
+        Assert.assertEquals("The alert text is not correct", "I prompt you", alert.getText());
+        alert.dismiss();
+        String textAfterAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        Assert.assertTrue("The text has not changed correctly",
+                textAfterAcceptingAlert.equals(textBeforeAcceptingAlert));
+    }
+
+    @Test
+    public void changeTextOnPromptAlertAndAccept() {
+        String textBeforeChangingTextAndAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        driver.findElement(By.cssSelector(PROMPT_BUTTON)).click();
+        Alert alert = driver.switchTo().alert();
+        String newText = "hello there";
+        alert.sendKeys(newText);
+        alert.accept();
+        String textAfterChangingTextAndAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        Assert.assertTrue("The text was not successfully changed",
+                !textBeforeChangingTextAndAcceptingAlert.equals(textAfterChangingTextAndAcceptingAlert)
+                        && textAfterChangingTextAndAcceptingAlert.equals(newText));
+    }
+
+    @Test
+    public void changeTextOnPromptAlertAndDismiss() {
+        String textBeforeChangingTextAndAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        driver.findElement(By.cssSelector(PROMPT_BUTTON)).click();
+        Alert alert = driver.switchTo().alert();
+        String newText = "hello there";
+        alert.sendKeys(newText);
+        alert.dismiss();
+        String textAfterChangingTextAndAcceptingAlert = driver.findElement(By.cssSelector(PROMPT_BUTTON_TEXT)).getText();
+        Assert.assertTrue("The text incorrectly changed",
+                textBeforeChangingTextAndAcceptingAlert.equals(textAfterChangingTextAndAcceptingAlert)
+                        && !textAfterChangingTextAndAcceptingAlert.equals(newText));
     }
 
     @After
