@@ -7,54 +7,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
-public class No1_Introduction_And_Feel_The_Pain_Exercise_Test {
-
-    /*
-
-    Synchronisation is one of the most important things we have to get a handle on when we are doing test automation
-
-    Poor synchronisation leads to...
-
-    - Test intermittency - sometimes it works locally, but not on e.g. CI
-    - Slow test execution - you might have too many implicit waits - you're not synchronising on the right things!
-    - False positives / negatives
-    - Moaning!
-
-    In this section, we will look at ways to handle synchronisation
-
-    So the exercise "feel the pain" is as follows:
-
-    Write a test which...
-
-    - On http://www.compendiumdev.co.uk/selenium/basic_ajax.html
-    - Select "Sever" from "combo1"
-    - Select "Java" from "combo2"
-    - Click "Code In It" button
-    - Assert that the loaded page has "_valuelanguage_id" text of 23
-
-    This should fail when running, but when you in debug and step over, the test should pass.....
-
-    Mmmmm...we need to add some synchronisation!!!
-
-     */
+public class No2_Fix_The_Feel_The_Pain_Exercise_Test {
 
     private WebDriver driver;
+    private WebDriverWait wait;
     private static final String MULTI_SELECT_CATEGORY = "select#combo1";
     private static final String MULTI_SELECT_LANGUAGE = "select#combo2";
+    private static final String MULTI_SELECT_LANGUAGE_OPTIONS = "select#combo2 option";
     private static final String CODE_IN_IT_BUTTON = "input[name=\"submitbutton\"]";
     private static final String LANGUAGE_VALUE_ID_ON_PROCESSED_PAGE = "#_valuelanguage_id";
+    private static final String PROCESSED_PAGE_HEADING ="body p:first-child";
 
     @Before
     public void instantiateDriver() {
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, 10, 50);
     }
 
     @Test
-    public void feelThePainExercise() {
+    public void feelThePainExerciseUsingWebDriverWait() {
 
         driver.get("http://www.compendiumdev.co.uk/selenium/basic_ajax.html");
 
@@ -62,6 +40,17 @@ public class No1_Introduction_And_Feel_The_Pain_Exercise_Test {
         WebElement multipleSelectCategoryElement = driver.findElement(By.cssSelector(MULTI_SELECT_CATEGORY));
         Select multipleSelectCategory = new Select(multipleSelectCategoryElement);
         multipleSelectCategory.selectByValue("3");
+        wait.until(textToBe(By.cssSelector(MULTI_SELECT_LANGUAGE_OPTIONS), "Cobol"));
+
+        //In the above, I have the expected conditions static method 'textToBe' as a static import - reads nicer :-)
+
+        //Other ways to handle above using expected conditions include...
+        wait.until(textToBePresentInElementLocated(By.cssSelector(MULTI_SELECT_LANGUAGE_OPTIONS), "Cobol"));
+        wait.until(attributeToBe(driver.findElement(By.cssSelector(MULTI_SELECT_LANGUAGE_OPTIONS)), "value", "20"));
+        wait.until(presenceOfElementLocated(By.cssSelector("option[value=\"23\"]")));
+        wait.until(visibilityOfElementLocated(By.cssSelector("option[value=\"23\"]")));
+        wait.until(elementToBeClickable(By.cssSelector("option[value=\"23\"]")));
+
 
         //Then select java from combo2
         WebElement multipleSelectLanguageElement = driver.findElement(By.cssSelector(MULTI_SELECT_LANGUAGE));
@@ -70,6 +59,12 @@ public class No1_Introduction_And_Feel_The_Pain_Exercise_Test {
 
         //Then click the code in it button
         driver.findElement(By.cssSelector(CODE_IN_IT_BUTTON)).click();
+
+        //Now I am going to add a wait condition to handle the new page load...
+        wait.until(titleIs("Processed Form Details"));
+
+        //Another way to handle above using expected conditions is...
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(PROCESSED_PAGE_HEADING), "Submitted Values"));
 
         //Assert that the loaded page has correct value
         String languageId = driver.findElement(By.cssSelector(LANGUAGE_VALUE_ID_ON_PROCESSED_PAGE)).getText();
@@ -81,9 +76,3 @@ public class No1_Introduction_And_Feel_The_Pain_Exercise_Test {
         driver.quit();
     }
 }
-
-/*
-
-Let's add some synchronisation to make this test pass - see the next class
-
- */
