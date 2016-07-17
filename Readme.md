@@ -133,3 +133,18 @@ Some cool functionality - I need to play around with this more:
 ### Frames - Introduction
 
 ![frames_introduction](readme_images/frames_introduction.png)
+
+### WebDriverWait + Custom ExpectedConditions - Examples:
+
+A named separate class:
+
+![custom_expected_condition_named_class](readme_images/custom_expected_condition_named_class.png)
+
+An anonymous class:
+
+![custom_expected_condition_anonymous_class](readme_images/custom_expected_condition_anonymous_class.png)
+
+An anonymous class wrapped within a method:
+
+![custom_expected_condition_anonymous_class_wrapped_within_method](readme_images/custom_expected_condition_anonymous_class_wrapped_within_method.png)
+

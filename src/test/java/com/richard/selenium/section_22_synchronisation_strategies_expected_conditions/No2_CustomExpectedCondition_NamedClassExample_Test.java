@@ -12,9 +12,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class No2_CustomExpectedCondition_NamedClassExample_Test {
 
     /*
+
+    So, let's create a Custom ExpectedCondition :-)
+
+    1) The first way to do this is using a separate named class:
 
     So the first thing I will do is create a custom expected condition using a named class (SelectContainsText) - see
     below.
@@ -56,6 +62,12 @@ public class No2_CustomExpectedCondition_NamedClassExample_Test {
             }
             return false;
         }
+
+        //Whenever you are creating your own classes, it's always good to add a toString() method
+        @Override
+        public String toString() {
+            return "select" + this.findBy + " to contain " + this.textToFind;
+        }
     }
 
     //And now for the actual test!
@@ -63,15 +75,31 @@ public class No2_CustomExpectedCondition_NamedClassExample_Test {
     private WebDriver driver;
 
     @Before
-    public void createDriver() {
+    public void createDriverAndGoToPage() {
         driver = new ChromeDriver();
+        driver.get("http://compendiumdev.co.uk/selenium/basic_ajax.html");
     }
 
     @Test
     public void namedClassExample() {
-        driver.get("http://compendiumdev.co.uk/selenium/basic_ajax.html");
+
+        //select server
+        WebElement categorySelect = driver.findElement(By.id("combo1"));
+        categorySelect.findElement(By.cssSelector("option[value=\"3\"]")).click();
+
         new WebDriverWait(driver, 10, 50).until
-                ((new SelectContainsText(By.id("combo2"), "Flash")));
+                ((new SelectContainsText(By.id("combo2"), "Java")));
+
+        //then select Java
+        WebElement languageSelect = driver.findElement(By.id("combo2"));
+        languageSelect.findElement(By.cssSelector("option[value=\"23\"]")).click();
+
+        //submit the form
+        WebElement codeInIt = driver.findElement(By.name("submitbutton"));
+        codeInIt.click();
+
+        WebElement languageWeUsed = driver.findElement(By.id("_valuelanguage_id"));
+        assertEquals("Expected Java code", "23", languageWeUsed.getText());
     }
 
     @After

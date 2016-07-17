@@ -19,9 +19,9 @@ public class No1_Introduction {
 
     Few ways to do this - we will look at the pros and cons:
 
-    1) Named class
-    2) Anonymous class
-    3) Something else TODO listen again
+    1) A separate named class
+    2) An anonymous class
+    3) An anonymous class wrapped within a method
 
     So let's move on to the next classes to see examples of these...
 
