@@ -54,6 +54,8 @@ public class No4_CustomExpectedCondition_AnonymousClassWrappedInMethodExample_Te
     In the body of the anonymous class, we are then using the "value" argument that's been passed in
     The variable has to be declared as final in order for it to be used in the anonymous class
 
+    Should always try to use this option if I can - will make things very very readable...
+
      */
 
     private ExpectedCondition<WebElement> optionWithValueDisplayed(final String value) {
