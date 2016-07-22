@@ -148,3 +148,22 @@ An anonymous class wrapped within a method:
 
 ![custom_expected_condition_anonymous_class_wrapped_within_method](readme_images/custom_expected_condition_anonymous_class_wrapped_within_method.png)
 
+### Fluent Wait
+
+Intro
+
+![fluent_wait_1](readme_images/fluent_wait_1.png)
+
+Example
+
+![fluent_wait_2](readme_images/fluent_wait_2.png)
+
+### Implicit Vs Explicit wait
+
+![implicit_vs_explicit_1](readme_images/implicit_vs_explicit_1.png)
+
+![implicit_vs_explicit_2](readme_images/implicit_vs_explicit_2.png)
+
+### Wait / Synchronisation - best practices
+
+![wait_best_practices](readme_images/wait_best_practices.png)
