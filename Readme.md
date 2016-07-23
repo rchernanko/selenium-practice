@@ -167,3 +167,9 @@ Example
 ### Wait / Synchronisation - best practices
 
 ![wait_best_practices](readme_images/wait_best_practices.png)
+
+### Cookies
+
+When you create / build a cookie, you can specify path, domain, isSecure etc etc (see comments in section_26_cookies). The bellow image demonstrates what these things refer to:
+
+![cookie_chrome_dev_tools](readme_images/cookie_chrome_dev_tools.png)
