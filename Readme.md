@@ -173,3 +173,7 @@ Example
 When you create / build a cookie, you can specify path, domain, isSecure etc etc (see comments in section_26_cookies). The bellow image demonstrates what these things refer to:
 
 ![cookie_chrome_dev_tools](readme_images/cookie_chrome_dev_tools.png)
+
+### Things to be aware of with cookies
+
+![things_to_be_aware_of_with_cookies](readme_images/things_to_be_aware_of_with_cookies.png)

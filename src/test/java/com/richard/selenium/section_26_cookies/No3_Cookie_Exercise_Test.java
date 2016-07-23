@@ -37,6 +37,8 @@ public class No3_Cookie_Exercise_Test {
             - And by creating a cookie from scratch (remember to experiment with Cookie.Builder and also just with
                 the Cookie constructor)
 
+    NOTE - Have a look at the 'things to be aware of with cookies' image in the readme for more info.
+
      */
 
     private WebDriver driver;
