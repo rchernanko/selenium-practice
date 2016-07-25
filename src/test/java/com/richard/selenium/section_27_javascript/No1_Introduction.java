@@ -1,5 +1,15 @@
 package com.richard.selenium.section_27_javascript;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.Assert.assertEquals;
+
 public class No1_Introduction {
 
     /*
@@ -58,4 +68,35 @@ public class No1_Introduction {
     An example is below:
 
      */
+
+    private WebDriver driver;
+
+    @Before
+    public void setUp() {
+        driver = new ChromeDriver();
+        driver.get("http://www.compendiumdev.co.uk/selenium/canvas_basic.html");
+    }
+
+    @Test
+    public void callAJavaScriptFunctionOnThePage() {
+
+        //Cast the driver to JavaScriptExecutor to access the JavaScript methods
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        int actionsCount = driver.findElements(By.cssSelector("#commandlist li")).size();
+
+        assertEquals("By default app has 2 actions listed", 2, actionsCount);
+
+        //Execute the 'draw' function on the page
+        js.executeScript("draw(1, 150, 150, 40, '#FF1C0A');");
+
+        actionsCount = driver.findElements(By.cssSelector("#commandlist li")).size();
+
+        assertEquals("Calling draw should add an action", 3, actionsCount);
+    }
+
+    @After
+    public void quitDriver() {
+        driver.quit();
+    }
 }
