@@ -61,6 +61,8 @@ public class No1_Introduction {
         - So if we return a Html Element (from javascript), we will get a web element (in java)
         - if we return a decimal (from javascript), we will get a double (in java) etc
 
+        (More information in the JavaDocs within JavaScriptExecutor class)
+
     The Javascript that we execute runs in an anonymous function - means that nothing is left behind when we run the
     javascript (unless we add variables / scripts into the global scope) - again, this will be demonstrated in latter
     videos. If you keep your variables / functions local, everything will be tidied up after your javascript execution.
