@@ -177,3 +177,13 @@ When you create / build a cookie, you can specify path, domain, isSecure etc etc
 ### Things to be aware of with cookies
 
 ![things_to_be_aware_of_with_cookies](readme_images/things_to_be_aware_of_with_cookies.png)
+
+### JavaScript + JavaScriptExecutor
+
+Intro:
+
+![javascript_executor_1](readme_images/javascript_executor_1.png)
+
+A basic example of JavaScriptExecutor:
+
+![javascript_executor_2](readme_images/javascript_executor_2.png)
