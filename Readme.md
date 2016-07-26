@@ -187,3 +187,23 @@ Intro:
 A basic example of JavaScriptExecutor:
 
 ![javascript_executor_2](readme_images/javascript_executor_2.png)
+
+### Browsers + Drivers
+
+![browsers_overview_1](readme_images/browsers_overview_1.png)
+
+When using RemoteWebDriver, we have to tell the remote web driver "i want you to give me a webdriver with these capabilities".
+
+Firefox:
+
+![browsers_overview_2](readme_images/browsers_overview_2.png)
+
+![browsers_overview_3](readme_images/browsers_overview_3.png)
+
+![browsers_overview_4](readme_images/browsers_overview_4.png)
+
+We can control the preferences for firefox...
+
+How do we know the preferences? Well, in firefox, if you type in about:config in the search bar, you will see a list of preferences.
+
+![browsers_overview_5](readme_images/browsers_overview_5.png)
