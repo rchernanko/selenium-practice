@@ -1,6 +1,6 @@
 # Selenium Udemy
 
-This is me messing around with Selenium.
+This is me messing around with Selenium. Note that I've saved the source code in my google drive.
 
 ### Useful info:
 

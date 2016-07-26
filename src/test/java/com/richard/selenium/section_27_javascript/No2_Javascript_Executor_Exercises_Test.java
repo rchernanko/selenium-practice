@@ -6,7 +6,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class No2_Javascript_Executor_Exercises_Test {
 
@@ -61,6 +65,95 @@ public class No2_Javascript_Executor_Exercises_Test {
 
         actionsCount = driver.findElements(By.cssSelector("#commandlist li")).size();
         assertEquals(12, actionsCount);
+    }
+
+    @Test
+    public void exercise2ReturnValuesFromJavaScript() {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        assertEquals("JavaScript should calculate correctly",
+                40L,
+                js.executeScript("return (arguments[0] + arguments[1]);",
+                20, 20));
+    }
+
+    @Test
+    public void returnHardCodedValueFromJavaScript() {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        assertEquals("return 10", 10L, js.executeScript("return 10;"));
+    }
+
+    @Test
+    public void changeTitleUsingJavaScript() {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        assertEquals("Javascript Canvas Example", driver.getTitle());
+
+        js.executeScript("document.title=arguments[0]", "richard");
+
+        assertEquals("richard", driver.getTitle());
+    }
+
+    @Test
+    public void useJQueryToHideBodyWithNoParams() {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        assertTrue(driver.findElement(By.cssSelector("#commands")).isDisplayed());
+
+        //Execute this jquery command - this will execute the hide function on the body
+        js.executeScript("$('body').hide();");
+
+        assertFalse(driver.findElement(By.cssSelector("#commands")).isDisplayed());
+    }
+
+    @Test
+    public void hideWebElementAsParam() {
+
+        //With this next one - instead of hiding the entire body (like in above), we are passing in a WebElement to hide
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        assertTrue(driver.findElement(By.cssSelector("#commands")).isDisplayed());
+
+        //This hides a particular web element :-) pretty cool
+        js.executeScript("$(arguments[0]).hide();", driver.findElement(By.cssSelector("#commands")));
+
+        assertFalse(driver.findElement(By.cssSelector("#commands")).isDisplayed());
+    }
+
+    @Test
+    public void javascriptRunsAsAnAnonymousFunctionButWeCanLeaveSomeBehind() {
+
+        //In this exercise, Alan asked us - can we leave some JavaScript behind...?
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // this code runs as an anonymous function with no trace left
+        js.executeScript("alert('alert triggered by webdriver')");
+
+        assertThat(driver.switchTo().alert().getText(), is("alert triggered by webdriver"));
+        driver.switchTo().alert().accept();
+
+        // now let's achieve the same thing - an alert - but not run it within the anonymous function (as per above), but
+        // instead add it to the global scope
+
+        // here i am creating / adding a function into the window (part of global scope) - this is called
+        // window.webdriveralert, and then i am calling it
+        js.executeScript("window.webdriveralert = function(){alert('stored alert triggered by webdriver');};"+
+                "window.webdriveralert.call();");
+
+        //if i have successfully been able to add the above into the global window, the below line will pass. if not, it
+        //will fail
+        assertThat(driver.switchTo().alert().getText(), is("stored alert triggered by webdriver"));
+        driver.switchTo().alert().accept();
+
+        // this can only work if we managed to leave javascript lying around
+        js.executeScript("window.webdriveralert.call();");
+        assertThat(driver.switchTo().alert().getText(), is("stored alert triggered by webdriver"));
+        driver.switchTo().alert().accept();
+
     }
 
     @AfterClass
