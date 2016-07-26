@@ -14,5 +14,10 @@ public class No1_Introduction {
     When using RemoteWebDriver, we have to tell the remote web driver "i want you to give me a webdriver with these
     capabilities".
 
+
+
+    DRIVERS CHANGE ALL THE TIME - YOU ALWAYS HAVE TO KEEP UP TO DATE!
+
+
      */
 }
