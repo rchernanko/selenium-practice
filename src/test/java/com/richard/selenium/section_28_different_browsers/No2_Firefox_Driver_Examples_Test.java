@@ -14,7 +14,7 @@ import java.io.IOException;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class No2_Firefox_Examples_Test {
+public class No2_Firefox_Driver_Examples_Test {
 
     /*
 
