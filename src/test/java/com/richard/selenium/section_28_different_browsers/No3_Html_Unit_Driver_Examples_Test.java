@@ -67,4 +67,10 @@ public class No3_Html_Unit_Driver_Examples_Test {
 
         htmlUnit.quit();
     }
+
+    /*
+
+    There was a proxy test as well but i didn't copy it - watch the video for more information
+
+     */
 }
