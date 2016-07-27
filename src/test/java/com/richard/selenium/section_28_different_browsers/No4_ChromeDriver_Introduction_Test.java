@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class No4_ChromeDriver_Introduction {
+public class No4_ChromeDriver_Introduction_Test {
 
     /*
 
