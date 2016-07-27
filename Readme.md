@@ -207,3 +207,15 @@ We can control the preferences for firefox...
 How do we know the preferences? Well, in firefox, if you type in about:config in the search bar, you will see a list of preferences.
 
 ![browsers_overview_5](readme_images/browsers_overview_5.png)
+
+Chromedriver:
+
+![chrome_driver_1](readme_images/chrome_driver_1.png)
+
+example...
+
+![chrome_driver_2](readme_images/chrome_driver_2.png)
+
+OperaDriver:
+
+![opera_driver](readme_images/opera_driver.png)
