@@ -219,3 +219,11 @@ example...
 OperaDriver:
 
 ![opera_driver](readme_images/opera_driver.png)
+
+IEDriver:
+
+![ie_driver_1](readme_images/ie_driver_1.png)
+
+### Browsers + Drivers - Things to watch out for...
+
+![different_browsers_and_drivers_things_to_watch_out_for](readme_images/different_browsers_and_drivers_things_to_watch_out_for.png)
