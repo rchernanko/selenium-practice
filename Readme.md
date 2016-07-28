@@ -233,3 +233,9 @@ IEDriver:
 ![remote_web_driver_1](readme_images/remote_web_driver_1.png)
 
 ![remote_web_driver_2](readme_images/remote_web_driver_2.png)
+
+### Taking Screenshots
+
+There are a couple of different ways to take a screenshot...
+
+![take_screenshot_readme](readme_images/take_screenshot_readme.png)
