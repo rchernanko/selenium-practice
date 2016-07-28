@@ -19,6 +19,9 @@ public class No1_Introduction {
 
     /*
 
+    See readme for introduction image - there are a couple of different ways to take a screenshot...
+    (check for capabilities or cast in a try/catch block)
+
     Here's a very simple example of taking screenshots...
 
      */
