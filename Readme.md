@@ -232,6 +232,4 @@ IEDriver:
 
 ![remote_web_driver_1](readme_images/remote_web_driver_1.png)
 
-Example:
-
 ![remote_web_driver_2](readme_images/remote_web_driver_2.png)
