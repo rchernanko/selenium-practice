@@ -227,3 +227,11 @@ IEDriver:
 ### Browsers + Drivers - Things to watch out for...
 
 ![different_browsers_and_drivers_things_to_watch_out_for](readme_images/different_browsers_and_drivers_things_to_watch_out_for.png)
+
+### RemoteWebDriver
+
+![remote_web_driver_1](readme_images/remote_web_driver_1.png)
+
+Example:
+
+![remote_web_driver_2](readme_images/remote_web_driver_2.png)
