@@ -239,3 +239,7 @@ IEDriver:
 There are a couple of different ways to take a screenshot...
 
 ![take_screenshot_readme](readme_images/take_screenshot_readme.png)
+
+### Page Objects - Introduction
+
+![page_objects_1](readme_images/page_objects_1.png)
