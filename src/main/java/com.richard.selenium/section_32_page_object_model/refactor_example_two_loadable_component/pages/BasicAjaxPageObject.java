@@ -51,6 +51,8 @@ public class BasicAjaxPageObject extends LoadableComponent<BasicAjaxPageObject> 
 
     So where we've left it, only one of our page objects extends LoadableComponent
 
+    Alan also went through SlowLoadableComponent but I have made no notes on that and would need to watch the video again
+
      */
 
     public enum Category {
