@@ -23,5 +23,8 @@ public class No1_Introduction {
     - Make decisions about the model based on the test readability and method re-use
     - Build only what you need as you need it
 
+    Tips:
+
+    Anytime you have an AND in your method name, split it! It will aid with re-usability!
      */
 }

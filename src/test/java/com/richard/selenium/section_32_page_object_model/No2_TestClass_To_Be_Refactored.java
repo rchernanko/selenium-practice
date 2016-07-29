@@ -17,8 +17,9 @@ public class No2_TestClass_To_Be_Refactored {
     /*
 
     Here is the test classes we are going to refactor into the page object model - I am not actually going to touch this
-    class. Instead I will leave it as it is + create another class "No3" and do all of my page object model refactoring
-    in there. This will therefore be a class I can refer back to to see what things USED TO BE LIKE.
+    class. Instead I will leave it as it is + create another class "No3_Refactored_Into_Page_Object_Model_Test" and do
+    all of my page object model refactoring in there. This will therefore be a class I can refer back to to see what
+    things USED TO BE LIKE.
 
      */
 
