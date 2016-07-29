@@ -243,3 +243,11 @@ There are a couple of different ways to take a screenshot...
 ### Page Objects - Introduction
 
 ![page_objects_1](readme_images/page_objects_1.png)
+
+### Page Object Model - LoadableComponent
+
+![page_object_loadable_component](readme_images/page_object_loadable_component.png)
+
+### Page Object Model - SlowLoadableComponent
+
+![page_object_slow_loadable_component](readme_images/page_object_slow_loadable_component.png)
