@@ -10,9 +10,9 @@ public class No1_Introduction {
 
     Huge number of different ways to do this - we will explore the following basics in these tutorials:
 
-        - Page Factory
-        - Extends LoadableComponent
         - Basic Objects
+        - Extends LoadableComponent
+        - Page Factory
 
     Modelling decisions are required when you make a call on how to do this.
 
@@ -26,5 +26,6 @@ public class No1_Introduction {
     Tips:
 
     Anytime you have an AND in your method name, split it! It will aid with re-usability!
+
      */
 }
