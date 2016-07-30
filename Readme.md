@@ -251,3 +251,7 @@ There are a couple of different ways to take a screenshot...
 ### Page Object Model - SlowLoadableComponent
 
 ![page_object_slow_loadable_component](readme_images/page_object_slow_loadable_component.png)
+
+### Page Object Model - PageFactory
+
+![page_object_model_page_factory](readme_images/page_object_model_page_factory.png)
