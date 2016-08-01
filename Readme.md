@@ -255,3 +255,7 @@ There are a couple of different ways to take a screenshot...
 ### Page Object Model - PageFactory
 
 ![page_object_model_page_factory](readme_images/page_object_model_page_factory.png)
+
+### Continuous Integration - A definition
+
+![continuous_integration_readme](readme_images/continuous_integration_readme.png)
