@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -53,7 +54,7 @@ public class No1_Introduction_And_Feel_The_Pain_Exercise_Test {
         driver = new ChromeDriver();
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class) // I know that this will fail...so I have added this "expected" in here
     public void feelThePainExercise() {
 
         driver.get("http://www.compendiumdev.co.uk/selenium/basic_ajax.html");
